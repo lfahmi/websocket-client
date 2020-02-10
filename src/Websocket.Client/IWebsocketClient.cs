@@ -119,6 +119,8 @@ namespace Websocket.Client
         /// <param name="message">Binary message to be sent</param>
         void Send(byte[] message);
 
+        void Send(byte[] message, int offset, int length);
+
         /// <summary>
         /// Send message to the websocket channel. 
         /// It doesn't use a sending queue, 
@@ -136,6 +138,8 @@ namespace Websocket.Client
         /// </summary>
         /// <param name="message">Message to be sent</param>
         Task SendInstant(byte[] message);
+        
+        Task SendInstant(byte[] message, int offset, int length);
 
         /// <summary>
         /// Force reconnection. 
